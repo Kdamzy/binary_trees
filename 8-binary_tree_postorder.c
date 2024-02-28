@@ -1,14 +1,15 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_postorder - Traverses a binary tree - postorder.
+ * binary_tree_postorder - goes through a binary tree using
+ * post order transverse.
  * @tree: A pointer to the root node.
- * @func: A pointer to a function to call
+ * @func: A pointer to a function to callof each node
  */
 
 void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))
 {
-	if (tree && func)
+	if (!tree || !func)
 		return;
 	{
 		binary_tree_postorder(tree->left, func);
