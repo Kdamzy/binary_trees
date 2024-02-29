@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "limits.h"
 
 /* Structures of the Data*/
 
@@ -27,21 +28,8 @@ typedef struct binary_tree_s bst_t;
 typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 
-/**
- * struct levelorder_queue_s - Level order traversal queue.
- * @node: A node of a binary tree.
- * @next: The next node to traverse to in the binary tree.
- */
-typedef struct levelorder_queue_s
-{
-	binary_tree_t *node;
-	struct levelorder_queue_s *next;
-} levelorder_queue_t;
-
-/* Printing helper function */
+/*function */
 void binary_tree_print(const binary_tree_t *);
-
-/* Task function prototypes */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
@@ -67,9 +55,11 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 void travasal(const binary_tree_t *tree, void (*func)(int), size_t height);
 int binary_tree_is_complete(const binary_tree_t *tree);
+int complete(const binary_tree_t *tree, size_t index, size_t num);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 int binary_tree_is_bst(const binary_tree_t *tree);
+int valid(const binary_tree_t *tree, int min, int max);
 bst_t *bst_insert(bst_t **tree, int value);
 bst_t *array_to_bst(int *array, size_t size);
 bst_t *bst_search(const bst_t *tree, int value);
