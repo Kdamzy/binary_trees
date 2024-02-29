@@ -3,8 +3,8 @@
 /**
  *power-raised - returns the value that is raised
  *@a: the value to exponentiate
- *@b: the power 
- *Return: 
+ *@b: the power.
+ *Return: the value raised
  */
 
 int power_raised(int a, int b)
