@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- *power-raised - returns the value that is raised
+ *power_raised - shows te value raised
  *@a: the value to exponentiate
  *@b: the power.
  *Return: the value raised
